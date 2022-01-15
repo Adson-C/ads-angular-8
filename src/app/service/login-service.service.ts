@@ -10,18 +10,21 @@ export class LoginServiceService {
 
   constructor(private http: HttpClient) { }
 
-  login(usuario) {
-    
+  login(usuario: any) {
+
     return this.http.post(AppConstants.baseLogin, JSON.stringify(usuario)).subscribe(data => {
 
       /*Retorno Http*/
-      var token = JSON.parse(JSON.stringify(data)).Authorization.split(' ')[1];
-      localStorage.setItem("token", token);
 
+        var token = (JSON.parse(JSON.stringify(data)).Authorization.split(' ')[1]);
+        localStorage.setItem("token", token);
+
+       // console.info("Token: " + localStorage.getItem("token"));
     },
-    error => {
-        console.error("Erro ao fazer Login!")
-    }
+      error => {
+        console.error("Erro ao fazer Login");
+        alert("Acesso Negado!")
+      }
     
     );
 
