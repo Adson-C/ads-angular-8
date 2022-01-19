@@ -4,7 +4,7 @@ public static get baseServidor(): string { return "http://localhost:8080/" }
 
 public static get baseLogin(): string { return this.baseServidor + "adsapirest/login" }
 
-public static get baseUrl(): string { return this.baseServidor + "adsapires/usuario/" }
+public static get baseUrl(): string { return this.baseServidor + "adsapirest/usuario/" }
 
 
 }
