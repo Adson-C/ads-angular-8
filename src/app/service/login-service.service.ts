@@ -17,15 +17,15 @@ export class LoginServiceService {
 
       /*Retorno Http*/
 
-        var token = (JSON.parse(JSON.stringify(data)).Authorization.split(' ')[1]);
+      var token = (JSON.parse(JSON.stringify(data)).Authorization.split(' ')[1]);
 
-        localStorage.setItem("token", token);
+      localStorage.setItem("token", token);
 
-       // console.info("Token: " + localStorage.getItem("token"));
-        this.router.navigate(['home']);
+      // console.info("Token: " + localStorage.getItem("token"));
+      this.router.navigate(['home']);
 
     },
-    error => {
+      error => {
         console.error("Erro ao fazer Login");
         alert("Acesso Negado!")
       }

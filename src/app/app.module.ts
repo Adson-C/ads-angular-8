@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component'; /*Requisições Ajax*/
 import { RouterModule, Routes} from '@angular/router'
 import { ModuleWithProviders} from '@angular/compiler/src/core';
 import { LoginComponent} from './login/login.component';
+import { HttpInterceptorModule } from './service/header-interceptor.service';
 
 
 export const appRoutes: Routes = [
@@ -28,7 +29,8 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRoutes);
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    routes
+    routes,
+    HttpInterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
