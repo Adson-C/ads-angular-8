@@ -1,3 +1,11 @@
+<br/>
+<form class="form-inline">
+	<div class="form-group mx-sm-3 mb-2">
+		<input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" placeholder="Pesquisa por Nome">
+	</div>
+	<button type="button" (click)="consutarUser()" class="btn btn-primary mb-2">Buscar</button>
+</form>
+<br/>
 <table class="table">
 
 	<thead class="thead-dark">
@@ -8,10 +16,10 @@
 
 	<tbody>
 		<tr *ngFor="let user of users">
-		<td>{{user.id}}</td>
-		<td>{{user.nome}}</td>
-		<td>{{user.cpf}}</td>
-		<td><button (click)="deleteUsuario(user.id)" class="btn btn-danger">Deletar</button></td>
+			<td>{{user.id}}</td>
+			<td>{{user.nome}}</td>
+			<td>{{user.cpf}}</td>
+			<td><button (click)="deleteUsuario(user.id)" class="btn btn-danger">Deletar</button></td>
 
 		</tr>
 

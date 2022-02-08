@@ -11,6 +11,7 @@ import { User } from 'src/app/model/user';
 export class UsuarioComponent implements OnInit {
 
   users: Observable<User[]>;
+  nome: String;
 
   constructor(private usuarioService: UsuarioService) {
 
@@ -25,13 +26,20 @@ export class UsuarioComponent implements OnInit {
 
   deleteUsuario(id: Number) {
     this.usuarioService.deletarUsuario(id).subscribe(data => {
-      
-    this.usuarioService.getUsuarioList().subscribe(data => {
-    this.users = data;
+
+      this.usuarioService.getUsuarioList().subscribe(data => {
+        this.users = data;
       });
 
     });
 
+  }
+
+  consutarUser() {
+    this.usuarioService.consultarUser(this.nome).subscribe(data => {
+      this.users = data;
+
+    });
   }
 
 }
