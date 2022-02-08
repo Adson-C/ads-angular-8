@@ -17,9 +17,21 @@ export class UsuarioComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.usuarioService.getUsuarioList().subscribe(data => {
       this.users = data;
     });
+  }
+
+  deleteUsuario(id: Number) {
+    this.usuarioService.deletarUsuario(id).subscribe(data => {
+      
+    this.usuarioService.getUsuarioList().subscribe(data => {
+    this.users = data;
+      });
+
+    });
+
   }
 
 }
